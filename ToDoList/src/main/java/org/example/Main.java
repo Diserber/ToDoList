@@ -1,13 +1,14 @@
 package org.example;
+
 import java.util.Scanner;
 
-    public class Main {
-        public static void main(String[] args){
+public class Main {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         TaskManager taskManager = new TaskManager();
         taskManager.loadTasks();
 
-        while (true){
+        while (true) {
             System.out.println("\nМеню:");
             System.out.println("1. Показать задачи");
             System.out.println("2. Добавить задачи");
@@ -18,16 +19,18 @@ import java.util.Scanner;
             int choice = scanner.nextInt();
             scanner.nextLine();
 
-            switch (choice){
-                case 1: System.out.println("Список задач:");
-                for (int i = 0; i < taskManager.getTasks().size(); i++){
-                    System.out.println(i + ":" + taskManager.getTasks().get(i));
-                }
-                break;
-                case 2: System.out.print("Введите название задачи: ");
-                String title = scanner.nextLine();
-                taskManager.addTask(title);
-                break;
+            switch (choice) {
+                case 1:
+                    System.out.println("Список задач:");
+                    for (int i = 0; i < taskManager.getTasks().size(); i++) {
+                        System.out.println(i + ":" + taskManager.getTasks().get(i));
+                    }
+                    break;
+                case 2:
+                    System.out.print("Введите название задачи: ");
+                    String title = scanner.nextLine();
+                    taskManager.addTask(title);
+                    break;
                 case 3:
                     System.out.print("Введите индекс задачи для удаления: ");
                     int removeindex = scanner.nextInt();
